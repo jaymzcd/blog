@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Base (radix) conversion in Python</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">A Pelican Blog </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/python.html">python</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/base-conversion-in-python.html" rel="bookmark"
+           title="Permalink to Base (radix) conversion in Python">Base (radix) conversion in Python</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-05T10:20:00">
+                Mon 05 August 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/alessandro-de-noia.html">Alessandro De Noia</a>
+        </address>
+<p>In <a href="/category/python.html">python</a>. </p>
+<p>tags: <a href="/tag/algorithm.html">algorithm</a><a href="/tag/python.html">python</a></p>
+</footer><!-- /.post-info -->      <p>In mathematical numeral systems, the radix or base is the number of unique digits, including zero, that a positional
+numeral system uses to represent numbers. (from Wikipedia)</p>
+<p>Converting an integer in base 10 into another base is one of the most common task asked in skill tests and interviews.
+Here my solution in Python:</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">baseConversion</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;
+N and K must be integers
+&quot;&quot;&quot;</span>
+    <span class="c"># create dictionary lookup for reminder&gt;=10</span>
+    <span class="n">LETTERS</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="mi">10</span><span class="p">:</span> <span class="n">string</span><span class="o">.</span><span class="n">lowercase</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">)}</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">while</span> <span class="n">N</span><span class="o">&gt;</span><span class="n">K</span><span class="p">:</span>
+        <span class="n">reminder</span> <span class="o">=</span> <span class="n">N</span> <span class="o">%</span> <span class="n">K</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">/</span> <span class="n">K</span>
+        <span class="k">if</span> <span class="mi">36</span><span class="o">&gt;</span><span class="n">reminder</span><span class="o">&gt;</span><span class="mi">9</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">LETTERS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">reminder</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">reminder</span><span class="p">)</span>
+    <span class="c"># append the result of the last division</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="c"># reverse the string</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
