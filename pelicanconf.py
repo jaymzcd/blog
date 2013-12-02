@@ -37,6 +37,4 @@ STATIC_PATHS = ['images']
 
 DISQUS_SITENAME = 'sdonk'
 
-
-
 USER_LOGO_URL = SITEURL + '/static/images/me.png'
