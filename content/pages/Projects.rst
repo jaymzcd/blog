@@ -16,8 +16,8 @@ Projects
 
 `GeoLondon`_
     GeoLondon is a Django based application to import into a PostGis database, show and analise data from:
-    * `Transport for London Feeds`_
-    * `OS OpenData`_
+    - `Transport for London Feeds`_
+    - `OS OpenData`_
 
 
 .. _Oscar SagePay: https://github.com/sdonk/oscar-sagepay

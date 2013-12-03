@@ -16,14 +16,15 @@ Your settings.py file should contain a tuple of models tuple:
 
 **settings.py**
 
-```python
-ALLOWED_MODELS = (
-    # add more models with the syntax ('app_label', 'model_name')
-    ('news', 'news'),
-    ('news', 'event'),
-    ('artist', 'artist'),
-)
-```
+
+.. code-block:: python
+    ALLOWED_MODELS = (
+        # add more models with the syntax ('app_label', 'model_name')
+        ('news', 'news'),
+        ('news', 'event'),
+        ('artist', 'artist'),
+    )
+
 
 Here is where the magic happens, the models are loaded using the Django get_model function and the views classes are created using [type](http://docs.python.org/2/library/functions.html#type)
 
