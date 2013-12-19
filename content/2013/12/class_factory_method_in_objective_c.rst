@@ -1,12 +1,13 @@
-Class factory method in Objective-C
-###################################
+Class factory methods in Objective-C
+####################################
 
 :date: 2013-12-02 15:00
 :tags: objective-c, ios, xcode
 :category: objective-c
-:slug: dynamically-create-class-views-from-models-in-django
+:slug: class-factory-methods-objective-c
 :author: Alessandro De Noia
 
+In the last couple of weeks I've been playing with Objective-C and Xcode at work. We needed a simple internal iPad app
 .. code-block:: objective-c
 
     //  Person.h
