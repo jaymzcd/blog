@@ -18,6 +18,7 @@ Your settings.py file should contain a tuple of models tuple:
 
 
 .. code-block:: python
+
     ALLOWED_MODELS = (
         # add more models with the syntax ('app_label', 'model_name')
         ('news', 'news'),
