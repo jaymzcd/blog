@@ -44,12 +44,53 @@ Our person class would then look like this:
     @property (nonatomic, copy) NSString* name;
     @property (nonatomic, copy) NSString* surname;
 
+    @end
+
+
+** implementation**
+
+.. code-block:: objective-c
+
+    // Person.m
+
+    #import "Person.h"
+
+    @implementation Person
+
+    @synthesize name = _name;
+    @synthesize surname = _surname;
+
+    @end
+
+The properties name and surname are declared in the interface file, while in the implementation file the statement
+synthesize automatically creates the setter and getter for a property.
+
+It would be great to have a class method that can initiate the class as well as set the values of the two property.
+We need to write a class factory!
+
+**interface**
+
+.. code-block:: objective-c
+
+    //  Person.h
+
+    #import <Foundation/Foundation.h>
+
+    @interface Person : NSObject {
+
+    }
+
+    @property (nonatomic, copy) NSString* name;
+    @property (nonatomic, copy) NSString* surname;
+
     + (Person*)personWithName:(NSString*)aName withSurname:(NSString*)aSurname;
 
     - (id)initPersonWithName:(NSString*)aName withSurname:(NSString*)aSurname;
 
     @end
 
+The plus sign (+) in front of the method *personWithName* defines a class method, a special method that can be called
+on the class itself and not on its instance.
 
 ** implementation**
 
@@ -79,5 +120,6 @@ Our person class would then look like this:
 
     @end
 
-The properties name and surname are declared in the interface file, while in the implementation file the statement
-synthesize automatically creates the setter and getter for a property.
+
+
+The code
