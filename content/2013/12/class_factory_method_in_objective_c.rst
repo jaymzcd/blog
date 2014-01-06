@@ -7,7 +7,30 @@ Class factory methods in Objective-C
 :slug: class-factory-methods-objective-c
 :author: Alessandro De Noia
 
-In the last couple of weeks I've been playing with Objective-C and Xcode at work. We needed a simple internal iPad app
+In the last couple of weeks I've been playing with Objective-C and Xcode at work. We needed a simple internal iPad app.
+Coming from Python it took me a couple of hours to grasp the concepts of interface and implementation.
+Create an object in Python is very easy and straightforward, for example the object Person (with two properties: name and surname)
+would look like this:
+
+.. code-block:: python
+
+class Person(object):
+
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+
+Objective-C (and C) has a different way of doing it. We need to create an interface for the class first and then write
+the correspondent implementation.
+In the interface, as the name suggests, the public methods and properties are declared. In simple words, it's the place
+where the public "bits" of the class are exposed to external world.
+The implementation is the place where to put the actual code for the properties and methods declared in the interface,
+hence the name.
+
+Our person class would then look like this:
+
+**interface**
+
 .. code-block:: objective-c
 
     //  Person.h
@@ -26,6 +49,9 @@ In the last couple of weeks I've been playing with Objective-C and Xcode at work
     - (id)initPersonWithName:(NSString*)aName withSurname:(NSString*)aSurname;
 
     @end
+
+
+** implementation**
 
 .. code-block:: objective-c
 
@@ -53,4 +79,5 @@ In the last couple of weeks I've been playing with Objective-C and Xcode at work
 
     @end
 
-
+The properties name and surname are declared in the interface file, while in the implementation file the statement
+synthesize automatically creates the setter and getter for a property.
