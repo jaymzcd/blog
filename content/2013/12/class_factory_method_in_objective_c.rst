@@ -14,11 +14,11 @@ would look like this:
 
 .. code-block:: python
 
-class Person(object):
+    class Person(object):
 
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
+        def __init__(self, name, surname):
+            self.name = name
+            self.surname = surname
 
 Objective-C (and C) has a different way of doing it. We need to create an interface for the class first and then write
 the correspondent implementation.
@@ -119,7 +119,3 @@ on the class itself and not on its instance.
     }
 
     @end
-
-
-
-The code
